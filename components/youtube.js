@@ -124,7 +124,8 @@ Vue.component('youtube-search', {
           "captions": [
             {
               "startSeconds": this.startSeconds,
-              "text": this.text
+              "text": this.text,
+              "fontHeightRelative": 15
             }
           ]
         }
