@@ -20,10 +20,12 @@ Vue.component('remove-background', {
                     <label> Result : </label> 
                     <div>
                         <img :src="result_image" style="max-width: 700px;">
-                        <a clas="btn-primary" target="_blank" download :href="result_image">
-                            Download Image
-                        </a>
-                        <iframe :src="share_link"></iframe>
+                        <div class="d-flex flex-column justify-content-center">
+                            <a clas="btn-primary" target="_blank" download :href="result_image">
+                                Download Image
+                            </a>
+                            <iframe class="mt-2" :src="share_link" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@ Vue.component('remove-background', {
                 this.loading = false
                 console.log(data,"===========")
                 this.result_image = data.image.image.result_image_url
-                this.share_link = `https://www.facebook.com/plugins/share_button.php?href=${data.image.image.result_image_url}&layout=button_count&size=large&mobile_iframe=true&width=97&height=28&appId" width="97" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media`
+                this.share_link = `https://www.facebook.com/plugins/share_button.php?href=${data.image.image.result_image_url}&layout=button_count&size=large&mobile_iframe=true&width=97&height=28&appId`
                 console.log(data.image.image.result_image_url,"gambar output")
             })
             .catch(err => {
