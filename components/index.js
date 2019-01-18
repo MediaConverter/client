@@ -8,6 +8,11 @@ var app = new Vue({
         'navbar' : navbar
     },
     data: {
-        
-    }
+        route : 'homepage'
+    },
+    methods: {
+        changeRoute(payload){
+            this.route = payload
+        }
+    },
 })

@@ -1,4 +1,3 @@
-
 export default {
     template : `
         <div class="mt-4 d-flex justify-content-center">

@@ -32,34 +32,24 @@
 
 <body>
   <div id="app">
+    <navbar @change-route="changeRoute"></navbar>
+    <product-name></product-name>
+    <div>
+      <youtube-search v-if="route == 'homepage'"></youtube-search>
+      <remove-background v-if="route == 'background' " ></remove-background>
+    </div>
     <div class="container mt-5">
       <div class="d-flex justify-content-server">
-        <youtube-search></youtube-search>
       </div>
     </div>
   </div>
-    <navbar></navbar>
-    <product-name></product-name>
-    <div>
-      <remove-background></remove-background>
-    </div>
-  </div>
-  
+
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
   <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   <script src="components/removebg.js"></script>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.2';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk')); 
-  </script>
   <script src="./components/youtube.js"></script>
   <script type="module" src="./components/index.js"></script>
   
