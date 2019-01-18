@@ -20,10 +20,10 @@ Vue.component('remove-background', {
                     <label> Result : </label> 
                     <div>
                         <img :src="result_image" style="max-width: 700px;">
-                        <button clas="btn-primary" target="_blank" download :href="result_image">
+                        <a clas="btn-primary" target="_blank" download :href="result_image">
                             Download Image
-                        </button>
-                        <iframe src="share_link"></iframe>
+                        </a>
+                        <iframe :src="share_link"></iframe>
                     </div>
                 </div>
             </div>
