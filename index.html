@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- csss -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+  <link type="text/css" rel="stylesheet" href="./css/style.css"/>
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet"> 
+
+  <title>Document</title>
+
+  <style>
+    input[type=text] {
+      width: 130px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+
+    /* When the input field gets focus, change its width to 100% */
+    input[type=text]:focus {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <navbar @change-route="changeRoute"></navbar>
+    <product-name></product-name>
+    <div>
+      <youtube-search v-if="route == 'homepage'"></youtube-search>
+      <remove-background v-if="route == 'background' " ></remove-background>
+    </div>
+    <div class="container mt-5">
+      <div class="d-flex justify-content-server">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="components/removebg.js"></script>
+  <script src="./components/youtube.js"></script>
+  <script type="module" src="./components/index.js"></script>
+  
+</body>
+
+</html>
