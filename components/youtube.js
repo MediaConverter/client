@@ -1,6 +1,6 @@
 Vue.component('youtube-search', {
   template: `
-    <div>
+    <div class="mt-4 d-flex flex-column align-items-center ">
       <form @submit.prevent="searchYt">
         <input type="text" name="search" placeholder="Search On Yt" v-model="keyword">
         <button type="submit" class="btn btn-dark">Search Youtube</button>
