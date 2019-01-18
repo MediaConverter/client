@@ -23,7 +23,7 @@ Vue.component('remove-background', {
                         <button clas="btn-primary" target="_blank" download :href="result_image">
                             Download Image
                         </button>
-                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://cdns.klimg.com/resized/670x335/p/headline/foto-spongebob-cs-menampakkan-diri-ke-d-799c8b.jpg&layout=button_count&size=large&mobile_iframe=true&width=97&height=28&appId" width="97" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="share_link"></iframe>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,8 @@ Vue.component('remove-background', {
         return { 
             loading : false,
             image: '',
-            result_image : ''
+            result_image : '',
+            share_link : ''
         }
     },
     methods: {
@@ -49,6 +50,7 @@ Vue.component('remove-background', {
                 this.loading = false
                 console.log(data,"===========")
                 this.result_image = data.image.image.result_image_url
+                this.share_link = `https://www.facebook.com/plugins/share_button.php?href=${data.image.image.result_image_url}&layout=button_count&size=large&mobile_iframe=true&width=97&height=28&appId" width="97" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media`
                 console.log(data.image.image.result_image_url,"gambar output")
             })
             .catch(err => {
